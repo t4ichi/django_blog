@@ -157,3 +157,10 @@ db/
 
 # secrets file
 secrets
+
+# 静的ファイル
+static/items
+static/csv
+
+# マイグレーションファイル
+core/migrations

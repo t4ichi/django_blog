@@ -9,27 +9,21 @@
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
-
 <div class="container">
     <div class="row justify-content-md-center">
+        {% for object in object_list %}
         <div class="col col-lg-4">
-            <img src=""
-                 width="100%">
-            <h3>product_name</h3>
-            <p>description</p>
+            <a href="/products/{{ object.id }}/">
+                <img src="{{ object.image_path }}" width="100%">
+                <h3>{{ object.name }}</h3>
+                <p>販売価格: {{ object.price }}円（{{ TAX_LABEL }}）</p>
+            </a>
+            <button type="button" class="btn btn-warning">{{ object.category }}</button>
+            {% for tag in object.tags.all %}
+                <button type="button" class="btn btn-info">{{ tag.name }}</button>
+            {% endfor %}
         </div>
-        <div class="col col-lg-4">
-            <img src=""
-                 width="100%">
-            <h3>product_name</h3>
-            <p>description</p>
-        </div>
-        <div class="col col-lg-4">
-            <img src=""
-                 width="100%">
-            <h3>product_name</h3>
-            <p>description</p>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
