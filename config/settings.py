@@ -135,7 +135,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-PRODUCT_IMAGES_DIR = os.path.join(STATIC_URL, 'items')
+PRODUCT_IMAGES_DIR = 'static/items'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
