@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'core',
     'import_export',
 ]
@@ -141,3 +142,6 @@ PRODUCT_IMAGES_DIR = 'static/items'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# テンプレート側での価格表示のカンマ付与桁を設定
+NUMBER_GROUPING = 3
