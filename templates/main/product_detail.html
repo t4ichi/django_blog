@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block main %}
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 fw-normal">{{ PAGE_TITLE }}</h1>
+        <p class="lead fw-normal">{{ productmodel.name }} の商品詳細です。</p>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-4">
+            <img src="/{{ productmodel.image_path }}" width="100%">
+        </div>
+        <div class="col col-lg-4">
+            <h3>{{ productmodel.name }}</h3>
+            <p>販売価格: {{ productmodel.price|intcomma }}円（{{ TAX_LABEL }}）</p>
+            <p>年式: {{ productmodel.model_year }}</p>
+            <p>メーカー名: {{ productmodel.maker }}</p>
+            <p>在庫: {{ productmodel.stock }}</p>
+            <a href="/cart/add/" class="btn btn-primary" role="button">カートに入れる</a>
+            <p>{{ productmodel.description }}</p>
+            <a href="/cart/add/" class="btn btn-primary" role="button">カートに入れる</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
