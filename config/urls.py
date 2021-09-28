@@ -20,4 +20,8 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.ProductListView.as_view()),
+    path('products/<str:pk>/', views.ProductDetailView.as_view()),
+    path('cart/remove/', views.RemoveCartView.as_view()),
+    path('cart/add/', views.AddCartView.as_view()),
+    path('cart/', views.CartView.as_view()),
 ]

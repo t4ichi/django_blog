@@ -1,0 +1,6 @@
+<form method="post" action="/cart/add/">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ productmodel.id }}">
+    個数:<input type="number" name="quantity" value="1">
+    <button type="submit" class="btn btn-info">カートに入れる</button>
+</form>

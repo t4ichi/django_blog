@@ -22,9 +22,9 @@
             <p>年式: {{ productmodel.model_year }}</p>
             <p>メーカー名: {{ productmodel.maker }}</p>
             <p>在庫: {{ productmodel.stock }}</p>
-            <a href="/cart/add/" class="btn btn-primary" role="button">カートに入れる</a>
+            {% include 'snippets/cart_add_button.html' %}
             <p>{{ productmodel.description }}</p>
-            <a href="/cart/add/" class="btn btn-primary" role="button">カートに入れる</a>
+            {% include 'snippets/cart_add_button.html' %}
         </div>
 
     </div>
